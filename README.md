@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Burger Builder App
+
+- based on ...
+- changes
+  - styled components
+  - TypeScript
+  - Jest
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
