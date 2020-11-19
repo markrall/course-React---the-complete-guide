@@ -1,13 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Toolbar from '../Navigation/Toolbar/Toolbar'
+import SideDrawer from '../Navigation/SideDrawer/SideDrawer'
+
 const Main = styled.main`
-  margin-top: 16px;
+  margin-top: 72px;
 `
 
 const layout = props => (
   <>
-    <div>Toolbar, Sidedrawer, Backdrop</div>
+    <Toolbar />
+    <SideDrawer />
     <Main>{props.children}</Main>
   </>
 )
