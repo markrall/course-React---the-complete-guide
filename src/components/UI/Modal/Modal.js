@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import styled from 'styled-components'
 
 import Backdrop from '../Backdrop/Backdrop'
 
-const Modal = styled.div`
+const ModalDiv = styled.div`
   position: fixed;
   z-index: 500;
   background-color: white;
@@ -23,18 +23,29 @@ const Modal = styled.div`
   }
 `
 
-const modal = ({ children, show, hide }) => (
-  <>
-    <Modal
-      style={{
-        transform: show ? 'translateY(0)' : 'translateY(-100vh)',
-        opacity: show ? '1' : '0',
-      }}
-    >
-      {children}
-    </Modal>
-    <Backdrop show={show} clicked={hide} />
-  </>
-)
+class Modal extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      nextProps.show !== this.props.show ||
+      nextProps.children !== this.props.children
+    )
+  }
 
-export default modal
+  render() {
+    return (
+      <>
+        <ModalDiv
+          style={{
+            transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
+            opacity: this.props.show ? '1' : '0',
+          }}
+        >
+          {this.props.children}
+        </ModalDiv>
+        <Backdrop show={this.props.show} clicked={this.props.hide} />
+      </>
+    )
+  }
+}
+
+export default Modal

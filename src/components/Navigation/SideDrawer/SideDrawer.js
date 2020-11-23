@@ -2,6 +2,7 @@ import React from 'react'
 
 import Logo from '../../Logo/Logo'
 import NavigationItems from '../NavigationItems/NavigationItems'
+import Backdrop from '../../UI/Backdrop/Backdrop'
 
 import styled from 'styled-components'
 
@@ -22,28 +23,35 @@ const SideDrawer = styled.div`
     display: none;
   }
 
-  & .Open {
+  &.Open {
     transform: translateX(0);
   }
 
-  & .Close {
+  &.Close {
     transform: translateX(-100%);
   }
 
   & .Logo {
-    height: 11%;
+    height: 8%;
     margin-bottom: 32px;
   }
 `
 
 const sideDrawer = props => {
+  let attachedClasses = ['Close']
+  if (props.open) {
+    attachedClasses = ['Open']
+  }
   return (
-    <SideDrawer>
-      <Logo />
-      <nav>
-        <NavigationItems />
-      </nav>
-    </SideDrawer>
+    <>
+      <Backdrop show={props.open} clicked={props.closed} />
+      <SideDrawer className={attachedClasses.join(' ')}>
+        <Logo />
+        <nav>
+          <NavigationItems />
+        </nav>
+      </SideDrawer>
+    </>
   )
 }
 

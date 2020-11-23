@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Logo from '../../Logo/Logo'
 import NavigationItems from '../NavigationItems/NavigationItems'
+import HamburgerMenu from '../../UI/HamburgerMenu/HamburgerMenu'
 
 const Toolbar = styled.header`
   height: 56px;
@@ -27,6 +28,10 @@ const Toolbar = styled.header`
     height: 100%;
   }
 
+  & .MenuHamburger {
+    display: none;
+  }
+
   @media (max-width: 499px) {
     .DesktopOnly {
       display: none;
@@ -36,7 +41,7 @@ const Toolbar = styled.header`
 
 const toolbar = props => (
   <Toolbar>
-    <div>MENU</div>
+    <HamburgerMenu show={props.open} />
     <Logo />
     <nav className="DesktopOnly">
       <NavigationItems />
