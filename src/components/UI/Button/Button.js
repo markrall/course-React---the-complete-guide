@@ -18,6 +18,11 @@ const Button = styled.button`
     padding-left: 0;
   }
 
+  &:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+
   ${props => {
     let color = ''
     switch (props.btnType) {
@@ -37,10 +42,16 @@ const Button = styled.button`
   }}
 `
 
-const button = props => (
-  <Button btnType={props.btnType} onClick={props.onClick}>
-    {props.children}
-  </Button>
-)
+const button = props => {
+  return (
+    <Button
+      btnType={props.btnType}
+      onClick={props.onClick}
+      disabled={props.disabled}
+    >
+      {props.children}
+    </Button>
+  )
+}
 
 export default button
