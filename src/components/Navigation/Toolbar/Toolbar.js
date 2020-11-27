@@ -44,7 +44,7 @@ const toolbar = props => (
     <HamburgerMenu show={props.open} />
     <Logo />
     <nav className="DesktopOnly">
-      <NavigationItems />
+      <NavigationItems isAuth={props.isAuth} />
     </nav>
   </Toolbar>
 )
