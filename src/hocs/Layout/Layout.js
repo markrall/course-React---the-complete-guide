@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar'
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer'
-import { auth } from '../../store/actions'
 
 const Main = styled.main`
   margin-top: 72px;

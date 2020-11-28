@@ -50,7 +50,8 @@ export const auth = (email, password, isSignup) => {
     }
 
     const BASE_URL = 'https://identitytoolkit.googleapis.com/v1/accounts:'
-    const API_KEY = '?key=' + process.env.FIREBASE_KEY
+    const API_KEY = '?key=' + process.env.REACT_APP_FIREBASE_KEY
+    // const API_KEY = '?key=AIzaSyBfdM5gFmg-n2GBUP1D7IWLjccJ3YMOt4U'
 
     let url = BASE_URL + 'signUp' + API_KEY
     if (!isSignup) {
