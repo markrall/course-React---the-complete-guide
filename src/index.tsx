@@ -11,7 +11,6 @@ import thunk from 'redux-thunk'
 import burgerBuilderReducer from './store/reducers/burgerBuilder'
 import orderReducer from './store/reducers/order'
 import authReducer from './store/reducers/auth'
-// require('dotenv').config()
 
 // @ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -31,7 +30,6 @@ const app = (
     </BrowserRouter>
   </Provider>
 )
-// console.log(process.env.FIREBASE_KEY)
 
 ReactDOM.render(
   <React.StrictMode>{app}</React.StrictMode>,
